@@ -4,4 +4,4 @@
 - Talend API Tester
 
 - 쿼리 테이블 설정시 한글 추가
-- ## ALTER TABLE test_table CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+- ALTER TABLE test_table CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
