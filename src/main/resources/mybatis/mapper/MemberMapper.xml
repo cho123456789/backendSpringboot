@@ -30,7 +30,7 @@
         FROM
             <include refid="memberTable"/>
         WHERE
-            user_id = #{from}
+            user_id = #{userId}
     </select>
 
     <insert id="postMember" useGeneratedKeys="true" keyProperty="userId" keyColumn="user_id">

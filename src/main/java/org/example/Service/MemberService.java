@@ -11,7 +11,7 @@ public interface MemberService {
 
     List<MemberDto> getMember();
 
-    List<MemberDto> getMemberById(Long from);
+    List<MemberDto> getMemberById(Long userId);
 
     APIResponse postMember(MemberDto memberDto);
 

@@ -38,11 +38,11 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public List<MemberDto> getMemberById(Long from) {
-        List<Member> memberList = memberMapper.getMemberList(from);
+    public List<MemberDto> getMemberById(Long userId) {
+        List<Member> memberList = memberMapper.getMemberList(userId);
 
         if (memberList == null || memberList.isEmpty()) {
-            log.warn("No members found with id: {}", from);
+            log.warn("No members found with id: {}", userId);
             return List.of(); // Return an empty list if no members found
         }
 

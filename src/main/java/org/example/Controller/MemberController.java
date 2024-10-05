@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.example.Dto.APIResponse;
 import org.example.Dto.MemberDto;
 import org.example.Service.MemberService;
+import org.example.entity.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -44,13 +45,14 @@ public class MemberController {
         }
     }
     @GetMapping("/memberList")
-    public ResponseEntity<APIResponse> getMemberList(@RequestParam("from") final Long from) {
+    public ResponseEntity<APIResponse> getMemberList(@RequestParam("userId") final Long userId) {
         try {
             // service
+            List<MemberDto> members = memberService.getMemberById(userId); // 리스트 반환
             return new ResponseEntity<>(
                     APIResponse.builder()
                             .resultCode(SUCCESS_CODE)
-                            .result(memberService.getMemberById(from))
+                            .result(members)
                             .resultMessage("Succees")
                             .build(),
                     HttpStatus.OK

@@ -12,7 +12,7 @@ public interface MemberMapper {
 
     List<Member> getAllMember();
 
-    List<Member> getMemberList(@Param("from") Long from);
+    List<Member> getMemberList(@Param("userId") Long from);
 
     long postMember(MemberDto memberDto);
     long deleteMember(MemberDto memberDto);
